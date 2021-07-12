@@ -19,8 +19,8 @@ jobs:
       run: docker build . --file Dockerfile --tag volume_calculator
     
     - name: Docker tag
-      run: docker tag volume_calculator rodrigo8torres4/volume_calculator:$(date +%s)
+      run: docker tag volume_calculator ${{secrets.DOCKER_USER}}/volume_calculator:$(date +%s)
       
     - name: Docker push
-      run: docker push rodrigo8torres4/volume_calculator:$(date +%s)
+      run: docker push ${{secrets.DOCKER_USER}}/volume_calculator:$(date +%s)
   
